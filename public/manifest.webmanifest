@@ -1,0 +1,9 @@
+{
+  "name": "Fête — Event Planner",
+  "short_name": "Fête",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f3",
+  "theme_color": "#b4390f",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

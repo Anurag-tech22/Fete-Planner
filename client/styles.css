@@ -1,0 +1,314 @@
+/* ───── Theme: light & dark colour tokens ───── */
+:root {
+  --on-acc: #fff;
+  --bg: #fff8f3;
+  --card: #fff;
+  --ink: #2a1a14;
+  --mut: #6b5348;
+  --acc: #b4390f;
+  --acc2: #7c2d8e;
+  --ok: #17653a;
+  --bad: #b00020;
+  --line: #ecd9cc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --on-acc: #1a1210;
+    --bg: #1a1210;
+    --card: #261b17;
+    --ink: #fbeee6;
+    --mut: #c9b0a2;
+    --acc: #ff8a5c;
+    --acc2: #d9a2ee;
+    --ok: #6fdc9c;
+    --bad: #ff8a9a;
+    --line: #4a372f;
+  }
+}
+
+/* ───── Reset & base typography ───── */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.55 system-ui,
+    sans-serif;
+}
+
+/* ───── Accessibility: skip link & focus ring ───── */
+.skip {
+  position: absolute;
+  left: -999px;
+  background: var(--acc);
+  color: var(--on-acc);
+  padding: 8px 14px;
+}
+.skip:focus {
+  left: 8px;
+  top: 8px;
+  z-index: 100;
+}
+:focus-visible {
+  outline: 3px solid var(--acc2);
+  outline-offset: 2px;
+}
+
+/* ───── Layout ───── */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 16px clamp(16px, 4vw, 32px) 48px;
+}
+
+/* ───── Typography ───── */
+h1 {
+  font:
+    700 clamp(2rem, 6vw, 3.2rem)/1.1 Georgia,
+    serif;
+  margin: 8px 0;
+}
+h1 span {
+  color: var(--acc);
+}
+h2 {
+  font:
+    700 1.3rem Georgia,
+    serif;
+  margin: 0 0 12px;
+}
+.lead {
+  color: var(--mut);
+  max-width: 60ch;
+}
+
+/* ───── Cards & grid ───── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.grid,
+.two {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.two {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ───── Forms: inputs, selects, labels, errors ───── */
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+input,
+select {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--acc);
+  flex: none;
+}
+.err {
+  color: var(--bad);
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  margin: 2px 0 0;
+}
+
+/* ───── Buttons ───── */
+button {
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 22px;
+  cursor: pointer;
+  background: var(--acc);
+  color: var(--on-acc);
+}
+button.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+button:disabled {
+  opacity: 0.6;
+}
+
+/* ───── Utility layout ───── */
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* ───── Budget tracker: category bars ───── */
+.cat {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.bar {
+  height: 10px;
+  background: var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--ok);
+}
+.warn i {
+  background: var(--bad);
+}
+.sm {
+  font-size: 0.85rem;
+  color: var(--mut);
+}
+.badge.warn {
+  color: var(--bad);
+  font-weight: 700;
+}
+
+/* ───── Checklists ───── */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li.chk {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+}
+.done {
+  text-decoration: line-through;
+  color: var(--mut);
+}
+
+/* ───── Plan summary ───── */
+.sum {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sum b {
+  display: block;
+  font:
+    700 1.4rem Georgia,
+    serif;
+}
+
+/* ───── Budget insights: donut + list ───── */
+.ins {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ins ul {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* ───── Run sheet table ───── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+}
+caption {
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+/* ───── Guest list ───── */
+.g {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+select {
+  width: auto;
+}
+
+/* ───── Responsive: mobile ───── */
+@media (max-width: 560px) {
+  .cat {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───── Accessibility: reduced motion ───── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ───── Accessibility: Windows High Contrast / forced-colors ───── */
+@media (forced-colors: active) {
+  .bar {
+    border: 1px solid CanvasText;
+  }
+  .bar i {
+    background: Highlight;
+  }
+  .warn i {
+    background: Mark;
+  }
+  .card {
+    border-color: CanvasText;
+  }
+  button {
+    border: 1px solid ButtonText;
+  }
+  .skip {
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+
+/* ───── Print ───── */
+@media print {
+  .noprint,
+  .skip {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
