@@ -16,7 +16,14 @@ _Budgets that never drift · Dynamic scaled timelines · Intelligent vendor rost
 [![Lighthouse Audit](https://img.shields.io/badge/Lighthouse-100%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-success?style=for-the-badge&logo=lighthouse&logoColor=white)](docs/QUALITY.md)
 [![TypeScript Strict](https://img.shields.io/badge/TypeScript-Strict%20Mode-blue?style=for-the-badge&logo=typescript&logoColor=white)](tsconfig.json)
 [![Security Vulnerabilities](https://img.shields.io/badge/npm%20Audit-0%20Vulnerabilities-brightgreen?style=for-the-badge&logo=snyk&logoColor=white)](SECURITY.md)
-[![Deployment Runtime](https://img.shields.io/badge/Deploy%20Target-Google%20Cloud%20Run%20%7C%20Container-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](docs/DEPLOY-GCP.md)
+[![Deployment Runtime](https://img.shields.io/badge/Deploy%20Target-Google%20Cloud%20Run%20%7C%20Container-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://fete-316363722465.asia-south1.run.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-fete--planner.run.app-success?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fete-316363722465.asia-south1.run.app)
+
+<br/>
+
+### 🌐 **Live Production Deployment**: [https://fete-316363722465.asia-south1.run.app](https://fete-316363722465.asia-south1.run.app)
+
+_(Hosted on Google Cloud Run in `asia-south1`, connected to Gemini 2.5 Flash on Vertex AI)_
 
 <br/>
 
